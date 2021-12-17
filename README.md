@@ -9,7 +9,7 @@ elements, such as the design, title and labels, as well as the graph type and st
 data sets required to generate the graph. The data sets from the file are automatically detected and added to the
 drop down options. 
 
-Once the graph has been created, the user has the option to use various graph navigation features such as *zoom* and editing
+Once the graph has been created, the user has the option to use several graph navigation features such as *zoom* and editing
 *figure parameters*. The user can also save the graph as various different file types; such as png, pdf, jpeg, svg and many more.
 
 
