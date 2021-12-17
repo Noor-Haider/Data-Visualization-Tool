@@ -1,0 +1,287 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+from matplotlib import pyplot
+
+from data_visualization_tool import FileHandling, Visualize
+import matplotlib
+
+matplotlib.use('Qt5Agg')
+
+
+class Ui_MainWindow(object):    # Generated using Qt designer
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(431, 778)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 10, 391, 80))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.appTitle = QtWidgets.QLabel(self.verticalLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(28)
+        font.setBold(True)
+        font.setWeight(75)
+        self.appTitle.setFont(font)
+        self.appTitle.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.appTitle.setAlignment(QtCore.Qt.AlignCenter)
+        self.appTitle.setObjectName("appTitle")
+        self.verticalLayout.addWidget(self.appTitle)
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 150, 162, 531))
+        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_2.addWidget(self.label_2)
+        self.label_9 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_9.setFont(font)
+        self.label_9.setObjectName("label_9")
+        self.verticalLayout_2.addWidget(self.label_9)
+        self.label_8 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.verticalLayout_2.addWidget(self.label_8)
+        self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_2.addWidget(self.label_3)
+        self.label_4 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout_2.addWidget(self.label_4)
+        self.label_5 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
+        self.verticalLayout_2.addWidget(self.label_5)
+        self.label_6 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_2.addWidget(self.label_6)
+        self.label_7 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout_2.addWidget(self.label_7)
+        self.verticalLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(249, 150, 171, 531))
+        self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setSpacing(35)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.loadButton = QtWidgets.QPushButton(self.verticalLayoutWidget_3)
+        self.loadButton.setObjectName("loadButton")
+        self.verticalLayout_3.addWidget(self.loadButton)
+        self.titleInput = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
+        self.titleInput.setObjectName("titleInput")
+        self.verticalLayout_3.addWidget(self.titleInput)
+        self.typeOptions = QtWidgets.QComboBox(self.verticalLayoutWidget_3)
+        self.typeOptions.setObjectName("typeOptions")
+        self.typeOptions.addItem("")
+        self.typeOptions.addItem("")
+        self.typeOptions.addItem("")
+        self.typeOptions.addItem("")
+        self.typeOptions.addItem("")
+        self.verticalLayout_3.addWidget(self.typeOptions)
+        self.styleOptions = QtWidgets.QComboBox(self.verticalLayoutWidget_3)
+        self.styleOptions.setObjectName("styleOptions")
+        self.styleOptions.addItem("")
+        self.styleOptions.addItem("")
+        self.styleOptions.addItem("")
+        self.styleOptions.addItem("")
+        self.styleOptions.addItem("")
+        self.verticalLayout_3.addWidget(self.styleOptions)
+        self.xInput = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
+        self.xInput.setObjectName("xInput")
+        self.verticalLayout_3.addWidget(self.xInput)
+        self.yInput = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
+        self.yInput.setObjectName("yInput")
+        self.verticalLayout_3.addWidget(self.yInput)
+        self.xOptions = QtWidgets.QComboBox(self.verticalLayoutWidget_3)
+        self.xOptions.setObjectName("xOptions")
+        self.verticalLayout_3.addWidget(self.xOptions)
+        self.yOptions = QtWidgets.QComboBox(self.verticalLayoutWidget_3)
+        self.yOptions.setObjectName("yOptions")
+        self.verticalLayout_3.addWidget(self.yOptions)
+        self.verticalLayoutWidget_4 = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(20, 100, 391, 41))
+        self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_4)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.loadLabel = QtWidgets.QLabel(self.verticalLayoutWidget_4)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.loadLabel.setFont(font)
+        self.loadLabel.setText("")
+        self.loadLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.loadLabel.setObjectName("loadLabel")
+        self.verticalLayout_4.addWidget(self.loadLabel)
+        self.verticalLayoutWidget_5 = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(130, 690, 160, 61))
+        self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setSpacing(6)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.generateButton = QtWidgets.QPushButton(self.verticalLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.generateButton.sizePolicy().hasHeightForWidth())
+        self.generateButton.setSizePolicy(sizePolicy)
+        self.generateButton.setMinimumSize(QtCore.QSize(0, 0))
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.generateButton.setFont(font)
+        self.generateButton.setObjectName("generateButton")
+        self.verticalLayout_5.addWidget(self.generateButton)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+        # ===================================[Connects]=====================================
+
+        self.loadButton.clicked.connect(self.clickedLoad)
+
+        self.generateButton.clicked.connect(self.clickedGenerate)
+
+        # ===================================================================================
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Data Visualization Tool"))
+        self.appTitle.setText(_translate("MainWindow", "Data Visualization Tool"))
+        self.label_2.setText(_translate("MainWindow", "Load File"))
+        self.label_9.setText(_translate("MainWindow", "Title"))
+        self.label_8.setText(_translate("MainWindow", "Graph Type"))
+        self.label_3.setText(_translate("MainWindow", "Style"))
+        self.label_4.setText(_translate("MainWindow", "x Label"))
+        self.label_5.setText(_translate("MainWindow", "y Label"))
+        self.label_6.setText(_translate("MainWindow", "x Data"))
+        self.label_7.setText(_translate("MainWindow", "y Data"))
+        self.loadButton.setText(_translate("MainWindow", "Load File"))
+        self.typeOptions.setItemText(0, _translate("MainWindow", "scatter plot"))
+        self.typeOptions.setItemText(1, _translate("MainWindow", "stem plot"))
+        self.typeOptions.setItemText(2, _translate("MainWindow", "vertical bar"))
+        self.typeOptions.setItemText(3, _translate("MainWindow", "horizontal bar"))
+        self.typeOptions.setItemText(4, _translate("MainWindow", "2D histogram"))
+        self.styleOptions.setItemText(0, _translate("MainWindow", "default"))
+        self.styleOptions.setItemText(1, _translate("MainWindow", "plain"))
+        self.styleOptions.setItemText(2, _translate("MainWindow", "grayscale"))
+        self.styleOptions.setItemText(3, _translate("MainWindow", "bold"))
+        self.styleOptions.setItemText(4, _translate("MainWindow", "outline grid"))
+        self.generateButton.setText(_translate("MainWindow", "Generate"))
+
+        # ================================[Clicked Methods]===================================
+
+    filePath = ""
+
+    def clickedLoad(self):  # Method that is triggered when the "load button" is clicked. It will open the file browser
+        # and assign categories/column headers in the x and y data combo boxes based on file loaded.
+        file, _ = QtWidgets.QFileDialog.getOpenFileName(None, 'Single File', '', '*.csv')
+
+        self.filePath = file
+
+        fileName = file[file.rfind('/') + 1:]  # Extracts the file name from the file path
+
+        self.xOptions.clear()  # Clears the x and y data combo boxes each time the button is clicked.
+        self.yOptions.clear()
+
+        if file != "":  # If statement to prevent crashing if file not loaded.
+
+            categories = FileHandling(file).getCategories()  # Detects and extracts the column headers from the file
+
+            self.xOptions.addItems(categories)
+            self.yOptions.addItems(categories)
+
+            if len(fileName) < 18:  # To prevent large file names from overflowing
+                self.loadLabel.setText(f"Loaded {fileName}")
+            else:
+                self.loadLabel.setText("Loaded")
+        else:
+            self.loadLabel.setText("Please load file")
+
+    def clickedGenerate(self):  # Method that will generate the graph once the "generate button" is clicked.
+
+        if self.filePath != "":  # If statement to prevent crashing if file not loaded.
+            file = self.filePath
+
+            #   Assigns input data to variables
+            data = FileHandling(file).getData()
+            xLabel = self.xInput.text()
+            yLabel = self.yInput.text()
+            title = self.titleInput.text()
+            graphType = self.typeOptions.currentText()
+            style = self.styleOptions.currentText()
+            xData = self.xOptions.currentText()
+            yData = self.yOptions.currentText()
+            fig = pyplot.figure(title)
+
+            Visualize(data, graphType, xLabel, yLabel, xData, yData, title, style).create()  # Generates graph
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
