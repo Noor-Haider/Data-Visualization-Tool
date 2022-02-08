@@ -1,4 +1,3 @@
-![alt text](https://i.imgur.com/dRtoFrx.png) 
 # Data Visualization Tool
 ___
 Data Visualization Tool or 'DVT' for short is an application that can generate various graphs based on data from CSV 
